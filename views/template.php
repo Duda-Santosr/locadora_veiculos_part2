@@ -165,4 +165,38 @@ $usuario = Auth::getUsuario();
                     </div>
                 </div>
             </div>
+            <?php endif; ?>
+
+            <!-- Formul.ário para calculo de aluguel -->
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h4 class="mb-0">
+                         Calcular a previsão de aluguel 💰
+                     </h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="post" class="needs-validation" novalidate>
+                            <div class="mb-3">
+                                <label for="tipo" class="input-label">
+                                 Tipo de veículo:
+                                </label>
+                                <select  class="form-select" name="tipo" id="tipo" required>
+                                    <option value="carro">Carro</option>
+                                    <option value="moto">Moto</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="quantidade" class="form-label">Quantidade de dias 📆:</label>
+                                <input type="number" class="form-control" name="dias_calculo" value="1" required>
+                            </div>
+                            <button class="btn btn-success w-100" type="submit" name="calcular">
+                                Calcular Previsão
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
