@@ -109,4 +109,60 @@ $usuario = Auth::getUsuario();
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         <?php endif; ?>
+
+        <!-- Tabela para adicionar novo veículo -->
+
+
+        <!-- formulário para adicionar novos veículos -->
+        <div class="row same-height-row">
+            <?php if (Auth::isAdmin()):?>
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h4 class="mb-0">Adicionar novo veículo</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="post" class="needs-validation" novalidate>
+                            <div class="mb-3">
+                                <label for="modelo" class="form-label">
+                                    Modelo:
+                                </label>
+                                <input type="text" class="form-control" name="modelo" 
+                                required>
+                                <div class="invalid-feedback">
+                                    Informe um modelo válido!
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                            <label for="placa" class="form-label">
+                                    Placa:
+                                </label>
+                                <input type="text" class="form-control" name="placa" 
+                                required>
+                                <div class="invalid-feedback">
+                                    Informe uma placa válida!
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                            <label for="tipo" class="form-label">
+                                    Tipo:
+                                </label>
+                                <select class="form-select" name="tipo" id="tipo" required>
+                                    <option value="empty" disabled selected></option>
+                                    <option value="carro">Carro</option>
+                                    <option value="moto">Moto</option>
+                                    <option value="caminhao">Caminhão</option>
+                                    <option value="aviao">Avião</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-success w-100" type="submit" 
+                            name="adicionar">
+                                Adicionar veículo
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
 </body>
