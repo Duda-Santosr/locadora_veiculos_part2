@@ -34,7 +34,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         // Se o login for correto direciona para a página inicial
         header('Location: index.php');
         exit;
-        
+
     }else{
         $mensagem = 'Falha ao executar  login! Verifique se o usuário e a senha estão corretos.';
     }
@@ -80,7 +80,11 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             <!-- Corpo do card -->
             <div class="card-body">
 
-                <form action="post" class="needs-validation" novalidate>
+                <?php if($mensagem): ?>
+                    <div class="alert alert-danger"><?=htmlspecialchars($mensagem) ?></div>
+                <?php endif; ?>
+
+                <form method="post" class="needs-validation" novalidate>
                     <input type="hidden">
 
                     <div class="mb-3">
@@ -98,7 +102,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                         <span class="password-toggle mt-3" onclick="togglePassword()"><i class="bi bi-eye-fill"></i></i></span>
                     </div>
 
-                    <button type="submit" class="btn btn-warning w-100">Entrar</button>
+                    <button type="submit" class="btn btn-primary w-100">Entrar</button>
                 </form>
             </div>
         </div>
